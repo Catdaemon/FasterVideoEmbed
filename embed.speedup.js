@@ -3,9 +3,9 @@
 function speedUpEmbeds()
 {
 	jQuery("iframe").each(function() {
-		var e = jQuery(this);
 		var src = e.attr('src');
-		var matches = src.match();
+		var e = jQuery(this);
+		var matches = src.match(/^(?:https?\:?)?\/\/(?:www\.)youtu(?:\.be|be.com)\/(?:embed\/|v\/|watch\?v=)(.+?)(?:\?|$)/);
 
 		if (matches)
 		{
@@ -41,7 +41,7 @@ function speedUpEmbeds()
 
 	jQuery(".unloaded").click(function() {
 		var e = jQuery(this);
-		var vid = jQuery(this).data('id');
+		var vid = e.data('id');
 
 		if (e.hasClass('youtube'))
 			e.replaceWith('<iframe src="//www.youtube.com/embed/'+vid+'?autoplay=1" allowfullscreen frameborder="0" style="width:'+e.width()+'px;height:'+e.height()+'px;"></iframe>');
