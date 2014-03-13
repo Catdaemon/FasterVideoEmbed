@@ -48,3 +48,4 @@ function speedUpEmbeds()
 		else if (e.hasClass('vimeo'))
 			e.replaceWith('<iframe src="//player.vimeo.com/video/'+vid+'?autoplay=1" allowfullscreen frameborder="0" style="width:'+e.width()+'px;height:'+e.height()+'px;"></iframe>');
 	});
+}
